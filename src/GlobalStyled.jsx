@@ -13,7 +13,7 @@ object-fit: fill;
 color: ${({color}) => color};
 transition: ${({transition}) => transition};
 max-height: 100vh;
-width: 100vw;
+max-width: 1280px;
 overflow-y:${({overflow}) => overflow};
 overflow-x: hidden;
 } 
@@ -53,7 +53,7 @@ border-radius: 10px;
 
 export const GlobalStyled = ({ backgroundColor, color, transition , backgroundImage,overflow}) => {
   
-
+console.log(overflow)
   
   let Bgvision=""
 

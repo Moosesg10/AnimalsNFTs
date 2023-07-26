@@ -1,24 +1,57 @@
-import React from "react";
-
-const H1 = {
-  fontWeight: "bold",
-  fontStyle: "Oblique",
-  fontFamily: '"Bebas Neue" ,"sans-serif"',
-  color: "rgb(6, 6, 6)",
-  fontSize: "15em",
-  display:"flex",
-  justifyContent:"center",
-  alingItems:"center",
-  margin:"15rem auto"
-};
+import React, { useEffect, useState } from "react";
+import InnerWidth from "../components/InnerWidth";
+import styled from "@emotion/styled";
+import Audio from "../components/Audio";
 
 
 
+const H1 = styled.h1`
+  font-weight: bold;
+  font-size: ${({ size }) => size}em;
+  color: rgb(6, 6, 6);
+  font-family: "Bebas Neue", "sans-serif";
+  width: 100%;
+  padding: 1rem;
+
+  font-style: italic;
+`;
 
 export const Comingsoon = () => {
+  const [sizeh1, setSizeh1] = useState(18);
+  const width = InnerWidth();
+
+
+
+  
+
+  useEffect(() => {
+    if (width >= 1100) setSizeh1(18);
+    if (width <= 1000) setSizeh1(12);
+    if (width <= 813) setSizeh1(8);
+    if (width <= 700) setSizeh1(8);
+    if (width <= 600) setSizeh1(8);
+    if (width <= 558) setSizeh1(5);
+    if (width <= 400) setSizeh1(4);
+    if (width <= 350) setSizeh1(4);
+    if (width <= 300) setSizeh1(3);
+  }, [width]);
   return (
-    <div>
-      <h1 style={H1}>Coming Soon</h1>
-    </div>
+    <>
+     {width <= 820 &&  <div style={{ padding: "4rem" }}></div>}
+     {width <= 400 &&  <div style={{ padding: "2rem" }}></div>}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100%",
+          marginLeft: "2rem",
+        }}
+      >
+        <H1 size={sizeh1}>Coming Soon</H1>
+        <Audio/>
+      </div>
+    </>
   );
 };

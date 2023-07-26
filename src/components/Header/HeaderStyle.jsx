@@ -15,7 +15,8 @@ export const Nav = {
   display: "flex",
   justifyContent:"flex-end",
   width: "100%",
-  gap:"1rem"
+  gap:"1rem",
+
 };
 
 export const ButtonDark = {
@@ -57,8 +58,7 @@ export const  bgLight = {
   width: "100vw",
   height: "100vh",
   transition:" background 0.6s ease-out",
-  height: "100%",
-  overflow:"auto"
+  height: "100%"
 };
 
 const Header = styled.header`
@@ -68,8 +68,8 @@ const Header = styled.header`
   top: 0;
   z-index: 999;
   background-color: transparent;
-  width: 100vw;
- 
+  width: 98%;
+
 `
 
 export const HS = styled.div`
@@ -90,7 +90,6 @@ export const  VisionBG = {
   height: "100vh",
   transition:" background 0.6s ease-out",
   height: "100%",
-  overflow:"auto"
 };
 
 

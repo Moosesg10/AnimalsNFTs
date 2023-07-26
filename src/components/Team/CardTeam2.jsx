@@ -54,7 +54,7 @@ export default function CardTeam2({Data,aura,transform}) {
           component="img"
           image={Data.img}
           alt="the wise"
-          sx={{ height: "50%" , borderRadius:"50%", width: "50%" , margin:"0 auto"}}
+          sx={{ height: "65%" , width: "100%" , margin:"0 auto"}}
         />
       <CardContents sx={{padding:"0 1rem", margin:"1rem auto"}}>
         <Typography variant="h4" sx={{textAlign:"center", fontSize:"2em" , color:"rgb(6,6,6)"}}>

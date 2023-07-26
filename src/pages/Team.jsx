@@ -4,6 +4,7 @@ import Grid2 from "@mui/material/Grid";
 import team from "../assets/Team.json";
 import CardTeam2 from "../components/Team/CardTeam2";
 import InnerWidth from "../components/InnerWidth";
+import ThemeContext from "../context/ThemeContext";
 
 const initialState = [
   {
@@ -22,7 +23,7 @@ const  Divs = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  margin-top: -2rem;
 
 `
 
@@ -30,15 +31,19 @@ const Team = () => {
   const [datos, setDatos] = useState(initialState);
   const [resposive, setResposive] = useState(false)
  const Width =  InnerWidth()
-
+ const Context = useContext(ThemeContext)
+ const Overflow = Context.setOverflow
 
   useEffect(() => {
-    if (Width <= 700) {
+    if (Width <= 800) {
       setResposive(true);
+      Overflow("scroll")
      }else{
        setResposive(false)
+      Overflow("hidden")
      }
   }, [Width])
+
   useEffect(() => {
     setDatos(team.Team);
   }, []);
@@ -47,18 +52,7 @@ const Team = () => {
 
   return (
     <Divs>
-     {!resposive ? <h2
-        style={{
-          fontSize: "1.8em",
-          textDecoration: "underline",
-          padding: "1rem",
-          fontWeight: "bold",
-          fontStyle: "italic",
-          fontFamily: "Bebas Neue",
-        }}
-      >
-        THE WISE
-      </h2>:""}
+     
      {!resposive ?
      <>
       <div

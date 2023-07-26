@@ -78,7 +78,7 @@ export const Headers = () => {
             to="/vision-map"
             onClick={() => handleVarios(VisionBG, ButtonLigt, false)}
           >
-            <span> Vision Map</span>
+            Vision Map
           </Link>
         </nav>
       </article>

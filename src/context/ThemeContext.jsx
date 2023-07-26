@@ -1,8 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useRef, useState } from "react";
 import {
   ButtonLigt,
   VisionBG,
 } from "../components/Header/HeaderStyle";
+import { Sonidos } from "../components/Reproductor/styles/ComponentsReproductor";
 import { DataUrl, THEMEBG, THEMEBUTTON ,colorlogo  } from "./VariablesVisionMap";
 
 
@@ -16,6 +17,7 @@ const ThemeProvide = ({ children }) => {
   const [details, setDetails] = useState(DataUrl)
   const [animation, setAnimation] = useState({name:"UpDown"})
   const [responsive, setResponsive] = useState(false)
+  const [overflow, setOverflow] = useState("hidden")
 
   const handleTheme = (theme, button, colorlogo) => {
     setTheme(theme);
@@ -31,6 +33,46 @@ const ThemeProvide = ({ children }) => {
   const handleDetails= (data) => {
     setDetails(data)
   }
+  const [buttonIcon, setButtonIcon] = useState(true);
+  const [numberSongs, setNumberSongs] = useState(0);
+  const [rotate, setRotate] = useState("");
+  const [mostar, setMostar] = useState(false);
+  
+  /* Use Ref */
+  const Audio = useRef(null);
+  
+  /* Constantes */
+  const SoundTrack = Sonidos[numberSongs].sonido,
+    NameSongs = Sonidos[numberSongs].name,
+    NameArtist = Sonidos[numberSongs].aritist;
+  const handleClix = (Conditional) => {
+    if (Conditional === "toca") {
+      Audio.current.play();
+      setButtonIcon(false);
+      setRotate("rotate");
+    } else if (Conditional === "pausa") {
+      Audio.current.pause();
+      setButtonIcon(true);
+      setRotate("");
+    }
+  };
+  
+  const handleSongs = (Conditional) => {
+    if (Conditional === "next") {
+      setNumberSongs(numberSongs + 1);
+      setButtonIcon(true);
+      setRotate("");
+    }
+    if (Conditional === "preview") {
+      setButtonIcon(true);
+      setNumberSongs(numberSongs - 1);
+      setRotate("");
+    }
+  };
+
+  const HandleMostar = (Conditional) => {
+    setMostar(Conditional)
+  }
 
 
   const data = {
@@ -44,7 +86,20 @@ const ThemeProvide = ({ children }) => {
     animation,
     setAnimation,
     responsive,
-    setResponsive
+    setResponsive,
+    overflow,
+    setOverflow,
+    Audio,
+    NameArtist,
+    NameSongs,
+    buttonIcon,
+    rotate,
+    mostar,
+    SoundTrack,
+    handleSongs,
+    handleClix,
+    HandleMostar,
+    numberSongs
   };
   return <ThemeContext.Provider value={data}>{children}</ThemeContext.Provider>;
 };

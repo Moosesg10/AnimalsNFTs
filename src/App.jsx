@@ -12,25 +12,39 @@ import { Error404 } from "./pages/Error404";
 import Details from "./pages/Details";
 import Stages from "./components/Details/Details";
 import Header from "./components/Header/Header";
+import { Comingsoon } from "./pages/ComingSoon";
+import Audio from "./components/Audio";
+import MusicPlayer from "./pages/MusicPlayer";
 
 
 
 function App() {
   const theme = useContext(ThemeContext);
   let bg = theme.theme;
-  const { backgroundColor, color, transition, backgroundImage, overflow } = bg;
+  const Overflow = theme.overflow
+  const { backgroundColor, color, transition, backgroundImage } = bg;
   return (
     <main>
       <BrowserRouter>
         <Routes>
-
-          <Route
+            
+           <Route
             path="/"
             element={
               <>
+              <Comingsoon/>
+           
+              </>
+            }
+          />
+             <Route
+            path="/home"
+            element={
+              <>
               <Header/>
-                <Animals />
-                <SocialLink />
+              <Animals/>
+              <SocialLink/>
+              <MusicPlayer/>
               </>
             }
           />
@@ -65,7 +79,7 @@ function App() {
         color={color}
         transition={transition}
         backgroundImage={backgroundImage}
-        overflow={overflow}
+        overflow={Overflow}
       />
     </main>
   );

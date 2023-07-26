@@ -22,12 +22,16 @@ const VisionMap = () => {
   const Aniamation= Context.animation
   const [responsive, setResponsive] = useState(false)
   const widt = InnerWidth()
+  const Overflow = Context.setOverflow
 
  useEffect(() => {
   if(widt <=800){
     setResponsive(true)
+    Overflow("scroll")
   }else{
     setResponsive(false)
+    Overflow("hidden")
+
   }
  }, [widt])
 
