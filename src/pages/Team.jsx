@@ -18,7 +18,7 @@ const initialState = [
 
 const  Divs = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,6 +34,7 @@ const Team = () => {
  const Context = useContext(ThemeContext)
  const Overflow = Context.setOverflow
 
+
   useEffect(() => {
     if (Width <= 800) {
       setResposive(true);
@@ -46,13 +47,13 @@ const Team = () => {
 
   useEffect(() => {
     setDatos(team.Team);
+    Overflow("auto")
   }, []);
 
   const Buba = team.Founder.map((data) => data)[0];
 
   return (
     <Divs>
-     
      {!resposive ?
      <>
       <div

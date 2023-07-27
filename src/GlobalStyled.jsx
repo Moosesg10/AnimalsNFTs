@@ -53,8 +53,6 @@ border-radius: 10px;
 
 export const GlobalStyled = ({ backgroundColor, color, transition , backgroundImage,overflow}) => {
   
-console.log(overflow)
-  
   let Bgvision=""
 
   if(backgroundImage){

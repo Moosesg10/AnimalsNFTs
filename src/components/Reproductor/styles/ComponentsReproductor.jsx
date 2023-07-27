@@ -19,7 +19,7 @@ export const Disk = styled.img`
 
   @keyframes rotate {
     100% {
-      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
     }
   }
 `;
@@ -65,11 +65,11 @@ export const DivPrincipal = styled.div`
   position: absolute;
   bottom: 1vh;
   left: 1vw;
-  z-index: 990;
+  z-index: 999;
 `;
 
 export const DivPanel = styled.div`
-  display: flex;
+  display: ${({display}) => display };
   justify-content: center;
   gap: 2em;
   align-items: center;

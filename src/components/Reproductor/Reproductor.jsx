@@ -29,20 +29,22 @@ const Reproductor = () => {
     handleSongs,
     handleClix,
     HandleMostar,
-    numberSongs
+    numberSongs,
+    display
   } = ReproductorContext;
   return (
     <DivPrincipal>
       <Contendor
-        onMouseEnter={() => HandleMostar(true)}
-        onMouseLeave={() => HandleMostar(false)}
+        onMouseEnter={() => HandleMostar(true, "flex")}
+        onMouseLeave={() => HandleMostar(false, "none")}
       >
         <Disk src={Dark} alt="disco" rotate={rotate} />
       </Contendor>
       {mostar && (
         <DivPanel
-          onMouseEnter={() => HandleMostar(true)}
-          onMouseLeave={() => HandleMostar(false)}
+          onMouseEnter={() => HandleMostar(true, "flex")}
+          onMouseLeave={() => HandleMostar(false, "none")}
+          display={display}
         >
           <DivContentPanel>
             <p>

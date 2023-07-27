@@ -37,7 +37,7 @@ const ThemeProvide = ({ children }) => {
   const [numberSongs, setNumberSongs] = useState(0);
   const [rotate, setRotate] = useState("");
   const [mostar, setMostar] = useState(false);
-  
+  const [display, setDisplay] = useState("none")
   /* Use Ref */
   const Audio = useRef(null);
   
@@ -70,8 +70,9 @@ const ThemeProvide = ({ children }) => {
     }
   };
 
-  const HandleMostar = (Conditional) => {
+  const HandleMostar = (Conditional, mostrar) => {
     setMostar(Conditional)
+    setDisplay(mostrar)
   }
 
 
@@ -99,7 +100,8 @@ const ThemeProvide = ({ children }) => {
     handleSongs,
     handleClix,
     HandleMostar,
-    numberSongs
+    numberSongs,
+    display
   };
   return <ThemeContext.Provider value={data}>{children}</ThemeContext.Provider>;
 };

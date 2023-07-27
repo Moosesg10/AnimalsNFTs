@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
@@ -24,9 +23,9 @@ const ExpandMore = styled((props) => {
 const Cards=styled(Card)`
   background-color: #f4e9e9;
   transition: background , filter , transform  0.3s ease-in;
-  max-height: 430px;
+  max-height: 630px;
   max-width: 300px  ;
-  
+;
   &:hover{
     transform:${({transform}) => transform};
     filter: drop-shadow(0 0 1.5em ${({aura}) => aura})
@@ -50,11 +49,11 @@ export default function CardTeam2({Data,aura,transform}) {
   return (
 
     Data && <Cards aura={aura} transform={transform} >
-      <CardMedia
-          component="img"
-          image={Data.img}
+      <img
+         
+          src={Data.img}
           alt="the wise"
-          sx={{ height: "65%" , width: "100%" , margin:"0 auto"}}
+          style={{ height: "200px" , width: "100%" , margin:"0 auto", padding:"0"}}
         />
       <CardContents sx={{padding:"0 1rem", margin:"1rem auto"}}>
         <Typography variant="h4" sx={{textAlign:"center", fontSize:"2em" , color:"rgb(6,6,6)"}}>

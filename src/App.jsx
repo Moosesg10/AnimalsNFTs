@@ -13,63 +13,124 @@ import Details from "./pages/Details";
 import Stages from "./components/Details/Details";
 import Header from "./components/Header/Header";
 import { Comingsoon } from "./pages/ComingSoon";
-import Audio from "./components/Audio";
 import MusicPlayer from "./pages/MusicPlayer";
-
-
 
 function App() {
   const theme = useContext(ThemeContext);
   let bg = theme.theme;
-  const Overflow = theme.overflow
+  const Overflow = theme.overflow;
   const { backgroundColor, color, transition, backgroundImage } = bg;
   return (
     <main>
       <BrowserRouter>
         <Routes>
-            
-           <Route
+          <Route
             path="/"
             element={
               <>
-              <Comingsoon/>
-           
+                <Comingsoon />
               </>
             }
           />
-             <Route
+          <Route
             path="/home"
             element={
               <>
-              <Header/>
-              <Animals/>
-              <SocialLink/>
-              <MusicPlayer/>
+                <Header />
+                <Animals />
+                <SocialLink />
+                <MusicPlayer />
               </>
             }
           />
-          <Route path="/team" element={<>
-            <Header />
-            <Team />
-          </>} />
-          <Route path="/vision-map" element={<>
-            <Header />
-            <VisionMap />
-          </>} />
-          <Route path="/the-paper" element={<>
-            <Header />
-            <ThePaper />
-          </>} />
-          <Route path="/vision-map" element={<>
-            <Header/>
-            <Details />
-          </>} >
-            <Route path="Muladhara" element={<Stages mostratcontent={true} />} />
-            <Route path="Svadhisthana" element={<Stages mostratcontent={false}  />} />
-            <Route path="Manipura" element={<Stages  mostratcontent={false} />} />
-            <Route path="Anahata" element={<Stages mostratcontent={false}  />} />
-            <Route path="Vishuddha" element={<Stages mostratcontent={false}  />} />
-            <Route path="Ajna" element={<Stages mostratcontent={false} />} />
+          <Route
+            path="/team"
+            element={
+              <>
+                <Header />
+                <Team />
+                <MusicPlayer />
+              </>
+            }
+          />
+          <Route
+            path="/vision-map"
+            element={
+              <>
+                <Header />
+                <VisionMap />
+                <MusicPlayer />
+              </>
+            }
+          />
+          <Route
+            path="/the-paper"
+            element={
+              <>
+                <Header />
+                <ThePaper />
+                <MusicPlayer />
+              </>
+            }
+          />
+          <Route
+            path="/vision-map"
+            element={
+              <>
+                <Header />
+                <Details />
+                <MusicPlayer />
+              </>
+            }
+          >
+            <Route
+              path="Muladhara"
+              element={
+                <>
+                  <Stages mostratcontent={true} /> <MusicPlayer />
+                </>
+              }
+            />
+            <Route
+              path="Svadhisthana"
+              element={
+                <>
+                  <Stages mostratcontent={false} /> <MusicPlayer />
+                </>
+              }
+            />
+            <Route
+              path="Manipura"
+              element={
+                <>
+                  <Stages mostratcontent={false} /> <MusicPlayer />
+                </>
+              }
+            />
+            <Route
+              path="Anahata"
+              element={
+                <>
+                  <Stages mostratcontent={false} /> <MusicPlayer />
+                </>
+              }
+            />
+            <Route
+              path="Vishuddha"
+              element={
+                <>
+                  <Stages mostratcontent={false} /> <MusicPlayer />
+                </>
+              }
+            />
+            <Route
+              path="Ajna"
+              element={
+                <>
+                  <Stages mostratcontent={false} /> <MusicPlayer />
+                </>
+              }
+            />
           </Route>
           <Route path="*" element={<Error404 />} />
         </Routes>

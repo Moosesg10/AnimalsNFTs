@@ -31,7 +31,7 @@ export default function Infos() {
         width: 40,
         position: "absolute",
         bottom: "1vh",
-        left: "2vh",
+        right: "2vh",
         zIndex: "999",
       }}
     >
