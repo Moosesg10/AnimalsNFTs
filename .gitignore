@@ -10,6 +10,13 @@ lerna-debug.log*
 node_modules
 
 *.local
+src
+public
+index.html
+package-lock.json
+package.json
+vercel.json
+vite.config.js
 
 # Editor directories and files
 .vscode/*
@@ -22,4 +29,5 @@ node_modules
 *.sln
 *.sw?
 !vercel.json
+
 

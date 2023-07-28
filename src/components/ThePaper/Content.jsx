@@ -12,7 +12,6 @@ const Content = [
       p3: "Time stretches on, and each moment feels like an eternity as they await the verdict that will irrevocably alter their destinies.",
     },
     id: 1,
-    down: true,
     img: Limbo,
   },
   {
@@ -23,7 +22,6 @@ const Content = [
       p3: "In The Clan, they will experience a profound spiritual awakening and establish a deep connection with the elevated beings that surround them. Ascension marks the commencement of a magnificent new journey, where they will uncover hidden knowledge and ascend to unparalleled levels of wisdom and power.",
     },
     id: 2,
-    down: true,
     img: Theclan,
   },
   {
@@ -34,7 +32,6 @@ const Content = [
       p3: "Together, we navigate the mysteries of existence, fostering a deep sense of unity and purpose.                                  ",
     },
     id: 3,
-    down: true,
     img: Ascencion,
   },
   {
@@ -45,7 +42,6 @@ const Content = [
       p3: "Enlightenment represents an invitation to join in the noble mission of helping and educating others in order to forge a sustainable future for our community",
     },
     id: 4,
-    down: false,
     img: Iluminacion,
   },
 ];
