@@ -1,7 +1,7 @@
 {
-  "name": "shop-shoes",
+  "name": "animals",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -26,5 +26,17 @@
     "emotion": "^11.0.0",
     "use-sound": "^4.0.1",
     "vite": "^4.1.0"
-  }
+  },
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moosesg10/AnimalsNFTs.git"
+  },
+  "author": "",
+  "license": "(MIT)",
+  "bugs": {
+    "url": "https://github.com/Moosesg10/AnimalsNFTs/issues"
+  },
+  "homepage": "https://github.com/Moosesg10/AnimalsNFTs#readme",
+  "description": ""
 }
