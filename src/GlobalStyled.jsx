@@ -14,6 +14,7 @@ color: ${({color}) => color};
 transition: ${({transition}) => transition};
 max-height: 100vh;
 max-width: 1280px;
+width: auto;
 overflow-y:${({overflow}) => overflow};
 overflow-x: hidden;
 } 

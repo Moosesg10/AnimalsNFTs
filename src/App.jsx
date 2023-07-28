@@ -22,7 +22,7 @@ function App() {
   const { backgroundColor, color, transition, backgroundImage } = bg;
   return (
     <main>
-         <MusicPlayer />
+     
       <BrowserRouter>
         <Routes>
           <Route
@@ -33,106 +33,7 @@ function App() {
               </>
             }
           />
-          <Route
-            path="/home"
-            element={
-              <>
-                <Header />
-                <Animals />
-                <SocialLink />
-                
-              </>
-            }
-          />
-          <Route
-            path="/team"
-            element={
-              <>
-                <Header />
-                <Team />
-                
-              </>
-            }
-          />
-          <Route
-            path="/vision-map"
-            element={
-              <>
-                <Header />
-                <VisionMap />
-                
-              </>
-            }
-          />
-          <Route
-            path="/the-paper"
-            element={
-              <>
-                <Header />
-                <ThePaper />
-                
-              </>
-            }
-          />
-          <Route
-            path="/vision-map"
-            element={
-              <>
-                <Header />
-                <Details />
-                
-              </>
-            }
-          >
-            <Route
-              path="Muladhara"
-              element={
-                <>
-                  <Stages mostratcontent={true} /> 
-                </>
-              }
-            />
-            <Route
-              path="Svadhisthana"
-              element={
-                <>
-                  <Stages mostratcontent={false} /> 
-                </>
-              }
-            />
-            <Route
-              path="Manipura"
-              element={
-                <>
-                  <Stages mostratcontent={false} /> 
-                </>
-              }
-            />
-            <Route
-              path="Anahata"
-              element={
-                <>
-                  <Stages mostratcontent={false} /> 
-                </>
-              }
-            />
-            <Route
-              path="Vishuddha"
-              element={
-                <>
-                  <Stages mostratcontent={false} /> 
-                </>
-              }
-            />
-            <Route
-              path="Ajna"
-              element={
-                <>
-                  <Stages mostratcontent={false} /> 
-                </>
-              }
-            />
-          </Route>
+         
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

@@ -58,7 +58,7 @@ const VisionContent2 = [
     id: 7,
     top: "20%",
     left: "37%",
-    heigthP: "520px",
+    heigthP: "420px",
     dropShadow: "#c72f69",
     dropShadowinitial: "#d8eded",
     url:"/vision-map",

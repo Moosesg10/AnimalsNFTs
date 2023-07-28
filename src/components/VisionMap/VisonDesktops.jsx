@@ -5,7 +5,7 @@ import VisionContent2 from './VisionMapDesktop/VisionContent2'
 
 const VisionDesktops = () => {
   return (
-    <div style={{width:"100vw", height:"108vh", marginTop:"-3em"}}>
+    <div style={{width:"100%", height:"108vh", marginTop:"-3em"}}>
       <div style={{ position:"relative",display:"flex", alignItems:"center",flexDirection:"column", height:"100%", width:"0", padding:"0", left:"50%", top:"-5%",zIndex:"999", }}>
         { <VisionImg vision={VisionContent2[1]} key={VisionContent2[0].id}/>}
         { <VisionImg vision={VisionContent2[2]} key={VisionContent2[1].id}/>}
