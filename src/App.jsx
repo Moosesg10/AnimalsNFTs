@@ -21,7 +21,7 @@ function App() {
   const Overflow = theme.overflow;
   const { backgroundColor, color, transition, backgroundImage } = bg;
   return (
-    <main>
+    <>
      
       <BrowserRouter>
         <Routes>
@@ -44,7 +44,7 @@ function App() {
         backgroundImage={backgroundImage}
         overflow={Overflow}
       />
-    </main>
+    </>
   );
 }
 
