@@ -1,12 +1,11 @@
 import React, { memo, useContext, useEffect, useMemo, useState} from "react";
-import VisionImg from "../components/VisionMap/VisionImg";
-import VisionContent2 from "../components/VisionMap/VisionContent2";
 import ThemeContext from "../context/ThemeContext";
 import Infos from "../components/VisionMap/info/Info";
-import ImgResponsive from "../components/VisionMap/ImgResponsive";
-import ContentResposive from "../components/VisionMap/ContentResponsive";
+import ImgResponsive from "../components/VisionMap/VisionMapResponsive/ImgResponsive";
+import ContentResposive from "../components/VisionMap/VisionMapResponsive/ContentResponsive";
 import styled from "@emotion/styled";
 import InnerWidth from "../components/InnerWidth";
+import VisionDesktops from "../components/VisionMap/VisonDesktops";
 
 const Divs= styled.div`
     display: flex;
@@ -15,7 +14,6 @@ const Divs= styled.div`
   flex-direction: column;
   height: 100vh;
 `
-
 
 const VisionMap = () => {
   const Context = useContext(ThemeContext)
@@ -37,9 +35,7 @@ const VisionMap = () => {
 
 const VisionMapDestktop = useMemo(() => {
  return(
-  VisionContent2.map((vision) => (
-    <VisionImg key={vision.id} vision={vision} animacion={Aniamation} />
-  ))
+    <VisionDesktops/>
  )
 },[])
 

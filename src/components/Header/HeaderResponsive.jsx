@@ -65,7 +65,7 @@ export const HeaderResponsive = () => {
           {logo ? (
             <Link
               style={color}
-              to="/"
+              to="/home"
               onClick={() => handleVarios(bgLight, ButtonDark, true, false)}
             >
               <img
@@ -77,7 +77,7 @@ export const HeaderResponsive = () => {
           ) : (
             <Link
               style={color}
-              to="/"
+              to="/home"
               onClick={() => handleVarios(bgLight, ButtonDark, true, false)}
             >
               <img

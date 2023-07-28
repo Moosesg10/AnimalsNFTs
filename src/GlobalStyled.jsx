@@ -8,7 +8,7 @@ html,body{
 background-color:${({backgroundcolor}) => backgroundcolor};
 background-image: url(${({bgimg}) => bgimg});
 background-repeat:repeat;
-background-size:"auto";
+background-size:cover;
 object-fit: fill;
 color: ${({color}) => color};
 transition: ${({transition}) => transition};
@@ -39,9 +39,9 @@ height: 10px;
 }
 
 body::-webkit-scrollbar-thumb {
-background-color: #050505c5;
+background-color: transparent;
 border-radius: 20px;
-border: 2px solid #e1e1df;
+border: 2px solid transparent;
 }
 
 body::-webkit-scrollbar-track {

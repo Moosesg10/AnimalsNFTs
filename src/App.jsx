@@ -22,6 +22,7 @@ function App() {
   const { backgroundColor, color, transition, backgroundImage } = bg;
   return (
     <main>
+         <MusicPlayer />
       <BrowserRouter>
         <Routes>
           <Route
@@ -39,7 +40,7 @@ function App() {
                 <Header />
                 <Animals />
                 <SocialLink />
-                <MusicPlayer />
+                
               </>
             }
           />
@@ -49,7 +50,7 @@ function App() {
               <>
                 <Header />
                 <Team />
-                <MusicPlayer />
+                
               </>
             }
           />
@@ -59,7 +60,7 @@ function App() {
               <>
                 <Header />
                 <VisionMap />
-                <MusicPlayer />
+                
               </>
             }
           />
@@ -69,7 +70,7 @@ function App() {
               <>
                 <Header />
                 <ThePaper />
-                <MusicPlayer />
+                
               </>
             }
           />
@@ -79,7 +80,7 @@ function App() {
               <>
                 <Header />
                 <Details />
-                <MusicPlayer />
+                
               </>
             }
           >
@@ -87,7 +88,7 @@ function App() {
               path="Muladhara"
               element={
                 <>
-                  <Stages mostratcontent={true} /> <MusicPlayer />
+                  <Stages mostratcontent={true} /> 
                 </>
               }
             />
@@ -95,7 +96,7 @@ function App() {
               path="Svadhisthana"
               element={
                 <>
-                  <Stages mostratcontent={false} /> <MusicPlayer />
+                  <Stages mostratcontent={false} /> 
                 </>
               }
             />
@@ -103,7 +104,7 @@ function App() {
               path="Manipura"
               element={
                 <>
-                  <Stages mostratcontent={false} /> <MusicPlayer />
+                  <Stages mostratcontent={false} /> 
                 </>
               }
             />
@@ -111,7 +112,7 @@ function App() {
               path="Anahata"
               element={
                 <>
-                  <Stages mostratcontent={false} /> <MusicPlayer />
+                  <Stages mostratcontent={false} /> 
                 </>
               }
             />
@@ -119,7 +120,7 @@ function App() {
               path="Vishuddha"
               element={
                 <>
-                  <Stages mostratcontent={false} /> <MusicPlayer />
+                  <Stages mostratcontent={false} /> 
                 </>
               }
             />
@@ -127,7 +128,7 @@ function App() {
               path="Ajna"
               element={
                 <>
-                  <Stages mostratcontent={false} /> <MusicPlayer />
+                  <Stages mostratcontent={false} /> 
                 </>
               }
             />

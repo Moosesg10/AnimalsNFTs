@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import InnerWidth from "../components/InnerWidth";
 import styled from "@emotion/styled";
-import Audio from "../components/Audio";
-
-
-
 const H1 = styled.h1`
   font-weight: bold;
   font-size: ${({ size }) => size}em;
@@ -25,7 +21,7 @@ export const Comingsoon = () => {
   
 
   useEffect(() => {
-    if (width >= 1100) setSizeh1(18);
+    if (width >= 1100) setSizeh1(15);
     if (width <= 1000) setSizeh1(12);
     if (width <= 813) setSizeh1(8);
     if (width <= 700) setSizeh1(8);
@@ -46,11 +42,11 @@ export const Comingsoon = () => {
           alignItems: "center",
           width: "100%",
           height: "100%",
-          marginLeft: "2rem",
+          marginLeft: "4rem",
         }}
       >
         <H1 size={sizeh1}>Coming Soon</H1>
-        <Audio/>
+
       </div>
     </>
   );

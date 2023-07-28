@@ -18,6 +18,11 @@ const ThemeProvide = ({ children }) => {
   const [animation, setAnimation] = useState({name:"UpDown"})
   const [responsive, setResponsive] = useState(false)
   const [overflow, setOverflow] = useState("hidden")
+  const [buttonIcon, setButtonIcon] = useState(true);
+  const [numberSongs, setNumberSongs] = useState(0);
+  const [rotate, setRotate] = useState("");
+  const [mostar, setMostar] = useState(false);
+  const [display, setDisplay] = useState("none")
 
   const handleTheme = (theme, button, colorlogo) => {
     setTheme(theme);
@@ -33,18 +38,16 @@ const ThemeProvide = ({ children }) => {
   const handleDetails= (data) => {
     setDetails(data)
   }
-  const [buttonIcon, setButtonIcon] = useState(true);
-  const [numberSongs, setNumberSongs] = useState(0);
-  const [rotate, setRotate] = useState("");
-  const [mostar, setMostar] = useState(false);
-  const [display, setDisplay] = useState("none")
+
   /* Use Ref */
   const Audio = useRef(null);
   
   /* Constantes */
   const SoundTrack = Sonidos[numberSongs].sonido,
     NameSongs = Sonidos[numberSongs].name,
-    NameArtist = Sonidos[numberSongs].aritist;
+    NameArtist = Sonidos[numberSongs].aritist,
+    TimeSongs = Sonidos[numberSongs].time;
+
   const handleClix = (Conditional) => {
     if (Conditional === "toca") {
       Audio.current.play();
@@ -101,7 +104,8 @@ const ThemeProvide = ({ children }) => {
     handleClix,
     HandleMostar,
     numberSongs,
-    display
+    display,
+    TimeSongs
   };
   return <ThemeContext.Provider value={data}>{children}</ThemeContext.Provider>;
 };

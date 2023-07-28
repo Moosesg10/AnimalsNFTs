@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext, useEffect} from "react";
 import Dark from "../../assets/reproductor/imagen.png";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
@@ -30,8 +30,14 @@ const Reproductor = () => {
     handleClix,
     HandleMostar,
     numberSongs,
-    display
+    display,
+    TimeSongs
   } = ReproductorContext;
+
+
+
+  
+
   return (
     <DivPrincipal>
       <Contendor

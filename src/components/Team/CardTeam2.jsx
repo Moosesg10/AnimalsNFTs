@@ -2,32 +2,20 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Collapse from '@mui/material/Collapse';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+
+
 
 
 const Cards=styled(Card)`
   background-color: #f4e9e9;
   transition: background , filter , transform  0.3s ease-in;
   max-height: 630px;
-  max-width: 300px  ;
+  max-width: 280px  ;
 ;
   &:hover{
-    transform:${({transform}) => transform};
     filter: drop-shadow(0 0 1.5em ${({aura}) => aura})
   }
 
@@ -61,24 +49,8 @@ export default function CardTeam2({Data,aura,transform}) {
         </Typography>
         <Typography variant="p" sx={{ display:"flex", justifyContent:"space-between" , textAlign:"left", fontSize:"1.5em",color:"rgb(6,6,6)",fontWeight:"bold", fontStyle:"italic", fontFamily:"Bebas Neue", padding:"0"}}>
             {Data.position}
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-          
-        >
-          <ExpandMoreIcon htmlColor="rgb(6,6,6)" />
-        </ExpandMore>
         </Typography>
       </CardContents>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContents>
-          <Typography paragraph sx={{fontWeight:"bold", fontStyle:"italic", fontFamily:"Bebas Neue" ,textAlign:"center", fontSize:"small"}}>
-          {Data.description}
-          </Typography>
-        </CardContents>
-      </Collapse>
     </Cards>
 
   );

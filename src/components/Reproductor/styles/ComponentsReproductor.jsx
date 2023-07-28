@@ -42,20 +42,14 @@ export const Sonidos = [
     sonido: sonido,
     name: "Money",
     aritist: "Pink floid",
-    time: 380,
+    time: 380000,
   },
   {
     sonido: sonido2,
     name: "Wish",
     aritist: "Pink floid",
-    time: 453,
-  },
-  {
-    sonido: sonido3,
-    name: "Comfortably",
-    aritist: "Pink floid",
-    time: 6540,
-  },
+    time: 293000,
+  }
 ];
 
 export const DivPrincipal = styled.div`
