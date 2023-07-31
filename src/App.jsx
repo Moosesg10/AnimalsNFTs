@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="DivMain">
       <BrowserRouter>
-      <MusicPlayer/>
+
         <Routes>
           <Route
             path="/"
@@ -39,106 +39,7 @@ function App() {
   
             }
           />
-           <Route
-            path="/home"
-            element={
-              <>
-                <Header />
-                <Animals />
-                <SocialLink />
-                
-              </>
-            }
-          />
-          <Route
-            path="/team"
-            element={
-              <>
-                <Header />
-                <Team />
-                
-              </>
-            }
-          />
-          <Route
-            path="/vision-map"
-            element={
-              <>
-                <Header />
-                <VisionMap />
-                
-              </>
-            }
-          />
-          <Route
-            path="/the-paper"
-            element={
-              <>
-                <Header />
-                <ThePaper />
-                
-              </>
-            }
-          />
-          <Route
-            path="/vision-map"
-            element={
-              <>
-                <Header />
-                <Details />
-                
-              </>
-            }
-          >
-            <Route
-              path="Muladhara"
-              element={
-                <>
-                  <Stages mostratcontent={true} /> 
-                </>
-              }
-            />
-            <Route
-              path="Svadhisthana"
-              element={
-                <>
-                  <Stages /> 
-                </>
-              }
-            />
-            <Route
-              path="Manipura"
-              element={
-                <>
-                  <Stages /> 
-                </>
-              }
-            />
-            <Route
-              path="Anahata"
-              element={
-                <>
-                  <Stages /> 
-                </>
-              }
-            />
-            <Route
-              path="Vishuddha"
-              element={
-                <>
-                  <Stages /> 
-                </>
-              }
-            />
-            <Route
-              path="Ajna"
-              element={
-                <>
-                  <Stages /> 
-                </>
-              }
-            />
-          </Route>
+
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
