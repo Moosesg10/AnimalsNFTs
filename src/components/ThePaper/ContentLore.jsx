@@ -9,8 +9,6 @@ const Div = styled.div`
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: none;
-  transform: translateY(-${({translate}) => translate}%);
-  transition: transform 0.8s ease-in;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +17,6 @@ const Div = styled.div`
   margin: 0 auto;
   flex-shrink: 1;
   flex-grow: 1;
-  flex-basis: 50% ;
   width: 100%;
   height: 100%;
   @keyframes up {
@@ -32,43 +29,45 @@ const Div = styled.div`
     }
   }
 `;
-const ContentLore = ({ data, translate }) => {
-  const { title, description, img } = data;
-  const { p1, p2, p3 } = description;
+
+
+const P=styled.p`
+  font-family:"inter var","system-ui","sans-serif" ,"ui-sans-serif ", "system-ui","-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetic Neue","Arial","Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  line-height:35px;
+  color:#f2eded;
+  
+`
+const ContentLore = ({ data }) => {
+  
+   
+  const description = data.description
+  const title = data.title
+  const {p1, p2 , p3} = description
+
 
   return (
-    <Div
-      translate={translate}
-    >
+    <Div>
       <h2
         style={{
-          fontStyle: "italic",
-          marginBottom: "-0.5rem",
           textAlign: "center",
-          marginTop: "0.5rem",
-          fontSize: "2em",
+          fontSize: "3em",
+      
         }}
       >
         {title}
       </h2>
-      <p
+      <P
         style={{
           textAlign: "center",
-          fontStyle: "italic",
-          fontWeight: "normal",
+          fontWeight: "600",
           fontSize: "0.97em",
+         
         }}
       >
         <span>{p1}</span>
         <span>{p2}</span>
         <span>{p3}</span>
-      </p>
-      <img
-        src={img}
-        alt={title}
-          height="400px"
-        style={{ marginBottom: "3em", width:"100%", maxWidth:"100%", maxHeight:"100%" }}
-      />
+      </P>
     </Div>
   );
 };

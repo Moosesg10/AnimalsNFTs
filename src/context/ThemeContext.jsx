@@ -1,10 +1,11 @@
+import { useEffect } from "react";
 import { createContext, useRef, useState } from "react";
 import {
   ButtonLigt,
   VisionBG,
 } from "../components/Header/HeaderStyle";
 import { Sonidos } from "../components/Reproductor/styles/ComponentsReproductor";
-import { DataUrl, THEMEBG, THEMEBUTTON ,colorlogo  } from "./VariablesVisionMap";
+import { DataUrl, THEMEBG, THEMEBUTTON ,colorlogo,imgstatus  } from "./VariablesVisionMap";
 
 
 const ThemeContext = createContext();
@@ -15,7 +16,7 @@ const ThemeProvide = ({ children }) => {
   const [color, setColor] = useState(THEMEBUTTON);
   const [logo, setLogo] = useState(colorlogo);
   const [details, setDetails] = useState(DataUrl)
-  const [animation, setAnimation] = useState({name:"UpDown"})
+  const [animation, setAnimation] = useState({name:"UpDown"}) 
   const [responsive, setResponsive] = useState(false)
   const [overflow, setOverflow] = useState("hidden")
   const [buttonIcon, setButtonIcon] = useState(true);
@@ -23,6 +24,11 @@ const ThemeProvide = ({ children }) => {
   const [rotate, setRotate] = useState("");
   const [mostar, setMostar] = useState(false);
   const [display, setDisplay] = useState("none")
+  const [imgStatus, setImgStatus] = useState(imgstatus)
+  const [colorBGmain, setColorBGmain] = useState("transparent")
+  const [width, setWidth] = useState(window.innerWidth)
+
+
 
   const handleTheme = (theme, button, colorlogo) => {
     setTheme(theme);
@@ -78,6 +84,16 @@ const ThemeProvide = ({ children }) => {
     setDisplay(mostrar)
   }
 
+  const handelImg = (Conditional,Color) => {
+    setImgStatus(Conditional)
+    setColorBGmain(Color)
+  }
+
+
+  useEffect(() => {
+    const Width = () => setWidth(window.innerWidth)
+    window.addEventListener('resize' , Width)
+  }, [width])
 
   const data = {
     theme,
@@ -105,7 +121,11 @@ const ThemeProvide = ({ children }) => {
     HandleMostar,
     numberSongs,
     display,
-    TimeSongs
+    TimeSongs,
+    imgStatus,
+    handelImg,
+    colorBGmain,
+    width
   };
   return <ThemeContext.Provider value={data}>{children}</ThemeContext.Provider>;
 };

@@ -38,7 +38,7 @@ const ImgPersonaje = styled.img`
 const ImgResponsive = ({ vision, animacion }) => {
   const Context = useContext(ThemeContext);
   const Details = Context.handleDetails;
-
+  const overflow = Context.setOverflow
   const {
     img,
     imgDetails,
@@ -51,11 +51,16 @@ const ImgResponsive = ({ vision, animacion }) => {
   } = vision;
   let personaje = img;
 
+  const handleVaries = () => {
+    Details({ imgDetails, name, dropShadow, imgPapiro })
+    overflow("hidden")
+  }
+
   return (
     <div>
       <Link
         to={url}
-        onClick={() => Details({ imgDetails, name, dropShadow, imgPapiro })}
+        onClick={handleVaries}
       >
         <ImgPersonaje
           src={personaje}

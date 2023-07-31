@@ -13,84 +13,93 @@ export const Article = {
 
 export const Nav = {
   display: "flex",
-  justifyContent:"flex-end",
+  justifyContent: "flex-end",
   width: "100%",
-  gap:"1rem",
-
+  gap: "1rem",
 };
 
 export const ButtonDark = {
   color: "rgb(6, 6, 6)",
-  fontWeight:"600",
+  fontWeight: "600",
   fontSize: "1.3em",
   fontFamily: '"Bebas Neue" ,"sans-serif"',
   fontStyle: "oblique",
   textDecoration: " none",
-  border:"none",
+  border: "none",
   cursor: "pointer",
 };
 
 export const ButtonLigt = {
   color: "#fcfcfcfc",
-  fontWeight:"600",
+  fontWeight: "600",
   fontSize: "1.3em",
   fontFamily: '"Bebas Neue" ,"sans-serif"',
   fontStyle: "oblique",
   textDecoration: " none",
-  border:"none",
+  border: "none",
   cursor: "pointer",
 };
 
-export const  bgDark = {
+export const bgDark = {
   backgroundColor: "rgb(6, 6, 6)",
-  backgroundImage:false,
+  backgroundImage: false,
   color: "#fcfcfcfc",
   width: "100vw",
   height: "100vh",
-  transition:" background 0.6s ease-out",
+  transition: " background 0.6s ease-out",
   height: "100%",
 };
 
-export const  bgLight = {
+export const bgLight = {
   backgroundColor: "#ffff",
-  backgroundImage:false,
+  backgroundImage: false,
   color: "rgb(6, 6, 6)",
   width: "100vw",
   height: "100vh",
-  transition:" background 0.6s ease-out",
-  height: "100%"
+  transition: " background 0.6s ease-out",
+  height: "100%",
 };
 
 const Header = styled.header`
   margin: 0;
   padding-right: 1rem;
-  position: sticky;
+  position: absolute;
   top: 0;
   z-index: 999;
   background-color: transparent;
   width: 98%;
-
-`
+`;
 
 export const HS = styled.div`
-   display: flex;
+  display: flex;
   justify-content: space-between;
   align-content: center;
   flex-wrap: wrap;
   flex-shrink: 1;
   color: black;
-`
+`;
 
-export const  VisionBG = {
-  backgroundColor: "rgb(6, 6, 6)",
-  backgroundImage:true,
+export const VisionBG = {
+  backgroundColor: "rgba(6,6,6)",
+  backgroundImage: true,
+  backgroundSize: "500%",
+  color: "#fcfcfcfc",
+  width: "100%",
+  height: "100%",
+  transition: " background 0.6s ease-out",
+
+};
+
+export const PaperBG = {
+  backgroundColors: "rgba(75, 27, 27, 0.28)",
+  backgroundImage: true,
   backgroundSize: "500%",
   color: "#fcfcfcfc",
   width: "100vw",
   height: "100vh",
-  transition:" background 0.6s ease-out",
+  transition: " background 0.6s ease-out",
   height: "100%",
 };
 
 
-export default Header
+export default Header;

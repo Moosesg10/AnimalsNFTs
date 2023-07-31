@@ -9,15 +9,15 @@ const Header = () => {
 const context = useContext(ThemeContext)
 const responsive= context.responsive
 const setResponvie = context.setResponsive;
-let width = InnerWidth();
+const Widht = context.width
 
 useEffect(() => {
-  if(width <=600){
+  if(Widht <=800){
     setResponvie(true)
   }else{
     setResponvie(false)
   }
- }, [width])
+ }, [Widht])
 
   return (
     <>

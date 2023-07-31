@@ -15,25 +15,130 @@ import Header from "./components/Header/Header";
 import { Comingsoon } from "./pages/ComingSoon";
 import MusicPlayer from "./pages/MusicPlayer";
 
+
+
 function App() {
   const theme = useContext(ThemeContext);
   let bg = theme.theme;
   const Overflow = theme.overflow;
-  const { backgroundColor, color, transition, backgroundImage } = bg;
+  const { backgroundColor, color, transition, backgroundImage ,backgroundColors } = bg;
+  const ColorBGmainS = theme.colorBGmain;
+  
+
+
   return (
-    <>
-     
+    <div className="DivMain">
       <BrowserRouter>
+      <MusicPlayer/>
         <Routes>
           <Route
             path="/"
             element={
-              <>
+    
                 <Comingsoon />
+  
+            }
+          />
+           <Route
+            path="/home"
+            element={
+              <>
+                <Header />
+                <Animals />
+                <SocialLink />
+                
               </>
             }
           />
-         
+          <Route
+            path="/team"
+            element={
+              <>
+                <Header />
+                <Team />
+                
+              </>
+            }
+          />
+          <Route
+            path="/vision-map"
+            element={
+              <>
+                <Header />
+                <VisionMap />
+                
+              </>
+            }
+          />
+          <Route
+            path="/the-paper"
+            element={
+              <>
+                <Header />
+                <ThePaper />
+                
+              </>
+            }
+          />
+          <Route
+            path="/vision-map"
+            element={
+              <>
+                <Header />
+                <Details />
+                
+              </>
+            }
+          >
+            <Route
+              path="Muladhara"
+              element={
+                <>
+                  <Stages mostratcontent={true} /> 
+                </>
+              }
+            />
+            <Route
+              path="Svadhisthana"
+              element={
+                <>
+                  <Stages /> 
+                </>
+              }
+            />
+            <Route
+              path="Manipura"
+              element={
+                <>
+                  <Stages /> 
+                </>
+              }
+            />
+            <Route
+              path="Anahata"
+              element={
+                <>
+                  <Stages /> 
+                </>
+              }
+            />
+            <Route
+              path="Vishuddha"
+              element={
+                <>
+                  <Stages /> 
+                </>
+              }
+            />
+            <Route
+              path="Ajna"
+              element={
+                <>
+                  <Stages /> 
+                </>
+              }
+            />
+          </Route>
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
@@ -43,8 +148,10 @@ function App() {
         transition={transition}
         backgroundImage={backgroundImage}
         overflow={Overflow}
+        colorBGmain={ColorBGmainS}
+        backgroundColors={  backgroundColors}
       />
-    </>
+    </div>
   );
 }
 

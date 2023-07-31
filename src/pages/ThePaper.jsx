@@ -1,85 +1,59 @@
 import React, { useEffect, useState } from "react";
 import ContentLore from "../components/ThePaper/ContentLore";
 import Content from "../components/ThePaper/Content";
-import DIVS from "../components/ThePaper/StylePaper";
-import { styled } from "styled-components";
+import DIVS, { Div } from "../components/ThePaper/StylePaper";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-const initialState = [
-  {
-    name: "",
-    id: "",
-    description: "",
-    button: "",
-  },
-];
+import { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
 
-const Div = styled.div`
-  position: relative;
-  top: 0px;
- 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-
-  animation-name: up;
-  animation-duration: 2s;
-  animation-delay: 0s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: none;
-  @keyframes up {
-    0% {
-      transform: translateY(950px);
-    }
-
-    100% {
-      transform: translateY(0px);
-    }
-  }
-`;
 
 const ThePaper = () => {
-  const [contents, setContents] = useState(initialState);
-  const [translate, setTranslate] = useState(0);
+  const [contentNumber, setContentNumber] = useState(0)
+  const [contents, setContents] = useState(Content[contentNumber]);
 
-  useEffect(() => {
-    setContents(Content);
-  }, []);
+  const context = useContext(ThemeContext)
+  const handleImg = context.handelImg
+
+ useEffect(() => {
+  setContents(Content[contentNumber])
+
+ }, [contentNumber])
+ useEffect(() => {
+  handleImg(contents.title)
+}, [contents])
 
   const handleTraslate = (conditional) => {
     if (conditional === "down") {
-      setTranslate(translate + 99);
+      setContentNumber(contentNumber + 1)
+        console.log(contentNumber)
     } else {
-      setTranslate(0);
+      setContentNumber(0)
+
     }
   };
+
+
 
   return (
     <div
       style={{
         display: "flex",
-        justifyContent: "flex-start",
+        justifyContent: "center",
         alignItems: "center",
         flexDirection:"column",
-        height: "100vh",
+        height: "100%",
+        width:"100%",
       }}
     >
       <DIVS>
-        {contents.map((content) => (
-          <>
             <ContentLore
-              key={content.id}
-              data={content}
-              translate={translate}
+              key={contents.id}
+              data={contents}
             />
-          </>
-        ))}
       </DIVS>
       <Div>
-        {translate <= 250 ? (
+        {contentNumber <= 2.5 ? (
           <button
             style={{
               background: "#fffdfd",
@@ -90,12 +64,14 @@ const ThePaper = () => {
               height: "40px",
               width: "40px",
               display: "flex",
-              justifyContent: "flex-start",
+              justifyContent: "center",
               alignItems: "center",
+              textAlign:"center",
+              
             }}
             onClick={() => handleTraslate("down")}
           >
-            <ArrowDownwardIcon sx={{ fontSize: "2.1em" }} />,
+            <ArrowDownwardIcon sx={{ fontSize: "2.1em", marginLeft:"0.2rem"  }} />,
           </button>
         ) : (
           <button
@@ -108,12 +84,15 @@ const ThePaper = () => {
               height: "40px",
               width: "40px",
               display: "flex",
-              justifyContent: "flex-start",
+              justifyContent: "center",
               alignItems: "center",
+              textAlign:"center",
+             
+
             }}
             onClick={() => handleTraslate("up")}
           >
-            <ArrowUpwardIcon sx={{ fontSize: "2.1em" }} />,
+            <ArrowUpwardIcon sx={{ fontSize: "2.1em" , marginLeft:"0.2rem" }} />,
           </button>
         )}
       </Div>

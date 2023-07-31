@@ -14,6 +14,8 @@ const Cards=styled(Card)`
   transition: background , filter , transform  0.3s ease-in;
   max-height: 630px;
   max-width: 280px  ;
+  min-width: 250px ;
+  min-height: 250px ;
 ;
   &:hover{
     filter: drop-shadow(0 0 1.5em ${({aura}) => aura})
@@ -28,11 +30,7 @@ const CardContents=styled(CardContent)`
 `
 
 export default function CardTeam2({Data,aura,transform}) {
-  const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   return (
 

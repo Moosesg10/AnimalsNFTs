@@ -1,25 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ThemeContext from "../../context/ThemeContext";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
+
+
 const ImgPersonaje = styled.img`
-  display: block;
-  position: absolute;
-  top: 1%;
   left: ${({ left }) => left};
   height: 100%;
-  width: 81.2%;
+  max-height:100% ;
   filter: drop-shadow(0 0 1em ${({ dropshadow }) => dropshadow});
   transform: ${({ transform }) => transform};
   right: ${({ right }) => right};
-  z-index: 995;
+
 `;
 
 const ImgPapiro = styled.img`
-  display: block;
-  position: absolute;
   width: 38%;
   height: 41%;
   max-width: 30%;
@@ -46,34 +43,6 @@ const ImgPapiro = styled.img`
   }
 `;
 
-const Div = styled.div`
-  display: block;
-  position: absolute;
-  font-family: inherit;
-  font-style: italic;
-  top: 37%;
-  left: 35.5%;
-  width: 30%;
-  height: 30%;
-  z-index: 999;
-  color: rgb(6, 6, 6);
-  animation-name: move;
-  animation-duration: 0.8s;
-  animation-delay: 0s;
-  animation-timing-function: ease-in;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-fill-mode: both;
-
-  @keyframes move {
-    0% {
-      transform: translateY(-3%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-`;
 
 const Goback = styled(Link)`
   position: absolute;
@@ -111,33 +80,47 @@ const Stages = () => {
   const Details = Context.details;
   const { imgDetails, name, dropShadow, imgPapiro } = Details;
   const handleAnimacion = Context.setAnimation;
+  const Width =Context.width
 
-  setTimeout(() => {
-    handleAnimacion();
-  }, 2500);
 
-  return (
-    <div>
-      <ImgPersonaje
-        src={imgDetails}
-        alt={name}
-        transform="none"
-        left="-42.1%"
-        dropshadow={dropShadow}
-      />
-      <ImgPersonaje
-        src={imgDetails}
-        alt={name}
-        transform="scaleX(-1)"
-        right="-42.1%"
-        dropshadow={dropShadow}
-      />
-      <ImgPapiro src={imgPapiro} alt="papiro" dropshadow={dropShadow} />
-      <Div></Div>
-      <Goback onClick={() => handleAnimacion("leftRigth")} to="/vision-map">
-        <ArrowBackIcon sx={{ fontSize: "2em" }} />
-      </Goback>
-    </div>
+const [mostarResponsive, setMostarResponsive] = useState(false)
+
+useEffect(() => {
+
+  if(Width < 900){
+    setMostarResponsive(true)
+  }
+}, [Width])
+
+
+return (
+    !mostarResponsive ? <div style={{width:"100%", height:"100%", maxWidth:"100%", display:"flex", justifyContent:"center", alignItems:"center", gap:"3.2em"}}>
+    <ImgPersonaje
+      src={imgDetails}
+      alt={name}
+      transform="none"
+      left="-42.1%"
+      dropshadow={dropShadow}
+    />
+    <ImgPapiro src={imgPapiro} alt="papiro" dropshadow={dropShadow} />
+    <ImgPersonaje
+      src={imgDetails}
+      alt={name}
+      transform="scaleX(-1)"
+      right="-42.1%"
+      dropshadow={dropShadow}
+    />
+
+    <Goback onClick={() => handleAnimacion("leftRigth")} to="/vision-map">
+      <ArrowBackIcon sx={{ fontSize: "2em" }} />
+    </Goback>
+  </div> :
+  <div style={{width:"100%", height:"100%", maxWidth:"100%", display:"flex", justifyContent:"center", alignItems:"center", gap:"3.2em"}}>
+  <ImgPapiro src={imgPapiro} alt="papiro" dropshadow={dropShadow} />
+  <Goback onClick={() => handleAnimacion("leftRigth")} to="/vision-map">
+    <ArrowBackIcon sx={{ fontSize: "2em" }} />
+  </Goback>
+</div>
   );
 };
 

@@ -8,6 +8,7 @@ import ThemeContext from "../../../context/ThemeContext";
 const ImgPersonaje = styled.img`
   z-index: 995;
   height: ${({ heigthp }) => heigthp};
+  max-height: ${({ heigthp }) => heigthp};
   transition: filter, transform 0.3s ease-in-out;
   animation-duration: 0.8s;
   animation-delay: 0.3s;
@@ -42,6 +43,7 @@ const ImgPersonaje = styled.img`
 const VisionImg = ({ vision }) => {
   const Context = useContext(ThemeContext);
   const Details = Context.handleDetails;
+  const overflow = Context.setOverflow
 
   const {
     img,
@@ -55,11 +57,16 @@ const VisionImg = ({ vision }) => {
   } = vision;
   let personaje = img;
 
+  const handleVaries = () => {
+    Details({ imgDetails, name, dropShadow, imgPapiro })
+    overflow("hidden")
+  }
+
   return (
     <>
       <Link
             to={url}
-            onClick={() => Details({ imgDetails, name, dropShadow, imgPapiro })}
+            onClick={handleVaries}
       >
         <ImgPersonaje
           src={personaje}
@@ -75,3 +82,10 @@ const VisionImg = ({ vision }) => {
 };
 
 export default VisionImg;
+1
+2
+4
+6
+0
+5
+3

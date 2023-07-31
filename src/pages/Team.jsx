@@ -17,37 +17,65 @@ const initialState = [
 
 
 const  Divs = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100%;
+  min-width: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: -2rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+-webkit-appearance: none;
+background-color: transparent;
+
+}
+
+&::-webkit-scrollbar:vertical {
+width:10px; 
+
+}
+
+&::-webkit-scrollbar-button:increment,
+&::-webkit-scrollbar-button {
+display: none;
+} 
+
+&::-webkit-scrollbar:horizontal {
+height: 10px;
+}
+
+&::-webkit-scrollbar-thumb {
+background-color: transparent;
+border-radius: 20px;
+border: 2px solid transparent;
+}
+
+&::-webkit-scrollbar-track {
+border-radius: 10px;  
+}
 
 `
 
 const Team = () => {
   const [datos, setDatos] = useState(initialState);
   const [resposive, setResposive] = useState(false)
- const Width =  InnerWidth()
  const Context = useContext(ThemeContext)
- const Overflow = Context.setOverflow
-
+ const Width = Context.width
 
   useEffect(() => {
     if (Width <= 800) {
       setResposive(true);
-      Overflow("scroll")
      }else{
        setResposive(false)
-      Overflow("hidden")
      }
   }, [Width])
 
   useEffect(() => {
     setDatos(team.Team);
-    Overflow("auto")
+   
   }, []);
 
   const Buba = team.Founder.map((data) => data)[0];
@@ -82,11 +110,9 @@ const Team = () => {
       </Grid2>
      </>:
       <>
-      <div></div>
        <div
         style={{
           marginBottom:"2rem",
-         
         }}
       >
       <CardTeam2 Data={Buba} aura={Buba.color}  transform="none"  key={Buba.id}/>

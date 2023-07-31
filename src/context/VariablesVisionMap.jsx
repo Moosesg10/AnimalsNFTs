@@ -9,6 +9,7 @@ import {
   ButtonLigt,
   VisionBG,
   bgLight,
+  PaperBG,
 } from "../components/Header/HeaderStyle";
 import Muladharapapiro from "../assets/Img/personajeDetalles/Muladhara.png";
 import Svadhisthanapapiro from "../assets/Img/personajeDetalles/Svadhisthana.png";
@@ -27,23 +28,28 @@ let DataUrl = {};
 
 let THEMEBG = bgLight,
   THEMEBUTTON = ButtonDark,
-  colorlogo = true;
+  colorlogo = true,
+  imgstatus = ""
 
 if (window.location.pathname === "/vision-map") {
   THEMEBG = VisionBG;
   THEMEBUTTON = ButtonLigt;
   colorlogo = false;
+  imgstatus="main"
 }
 if (window.location.pathname === "/the-paper") {
-  THEMEBG = VisionBG;
+  THEMEBG = PaperBG;
   THEMEBUTTON = ButtonLigt;
   colorlogo = false;
+  imgstatus="Limbo"
 }
 
 if (window.location.pathname === "/team") {
   THEMEBG = VisionBG;
   THEMEBUTTON = ButtonLigt;
   colorlogo = false;
+  imgstatus="main"
+
 }
 
 if (window.location.pathname === "/vision-map/Manipura") {
@@ -56,6 +62,8 @@ if (window.location.pathname === "/vision-map/Manipura") {
     imgPapiro: Manipurapapiro,
     imgDetails: ManipuraDetails,
   };
+  imgstatus="main"
+
 }
 if (window.location.pathname === "/vision-map/Muladhara") {
   THEMEBG = VisionBG;
@@ -67,6 +75,8 @@ if (window.location.pathname === "/vision-map/Muladhara") {
     imgPapiro: Muladharapapiro,
     imgDetails: MuladharaDetails,
   };
+  imgstatus="main"
+
 }
 if (window.location.pathname === "/vision-map/Svadhisthana") {
   THEMEBG = VisionBG;
@@ -78,6 +88,8 @@ if (window.location.pathname === "/vision-map/Svadhisthana") {
     imgPapiro: Svadhisthanapapiro,
     imgDetails: SvadhisthanaDetails,
   };
+  imgstatus="main"
+
 }
 if (window.location.pathname === "/vision-map/Anahata") {
   THEMEBG = VisionBG;
@@ -89,6 +101,8 @@ if (window.location.pathname === "/vision-map/Anahata") {
     imgPapiro: Anahatapapiro,
     imgDetails: AnahataDetails,
   };
+  imgstatus="main"
+
 }
 if (window.location.pathname === "/vision-map/Vishuddha") {
   THEMEBG = VisionBG;
@@ -100,6 +114,8 @@ if (window.location.pathname === "/vision-map/Vishuddha") {
     imgPapiro: Vishuddhapapiro,
     imgDetails: VishuddhaDetails,
   };
+  imgstatus="main"
+
 }
 if (window.location.pathname === "/vision-map/Ajna") {
   THEMEBG = VisionBG;
@@ -111,6 +127,8 @@ if (window.location.pathname === "/vision-map/Ajna") {
     imgPapiro: Ajnapapiro,
     imgDetails: AjnaDetails,
   };
+  imgstatus="main"
+
 }
 
-export { DataUrl, THEMEBG, THEMEBUTTON, colorlogo };
+export { DataUrl, THEMEBG, THEMEBUTTON, colorlogo , imgstatus};

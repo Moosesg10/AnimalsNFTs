@@ -6,7 +6,8 @@ import Header, {
   Nav,
   bgLight,
   VisionBG,
-  HS
+  HS,
+  PaperBG
 } from "./HeaderStyle";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo_Vectorizado.svg";
@@ -23,10 +24,21 @@ export const Headers = () => {
   let { color, logo } = theme;
 
   const handleAnimacion = theme.setAnimation;
+  const handelImg = theme.handelImg
 
-  const handleVarios = (bg, button, bolean) => {
+
+  const Context = useContext(ThemeContext)
+  const Overflow = Context.setOverflow
+ 
+ 
+
+
+
+  const handleVarios = (bg, button, bolean,conditional ,overflow) => {
     theme.handleTheme(bg, button, bolean);
     handleAnimacion("UpDown");
+    handelImg(conditional)
+    Overflow(overflow)
   };
 
   return (
@@ -36,7 +48,7 @@ export const Headers = () => {
         <Link
           style={color}
           to="/home"
-          onClick={() => handleVarios(bgLight, ButtonDark, true, false)}
+          onClick={() => handleVarios(bgLight, ButtonDark, true, false,"hidden")}
         >
           <img
             src={Logo}
@@ -48,7 +60,7 @@ export const Headers = () => {
         <Link
         style={color}
         to="/home"
-        onClick={() => handleVarios(bgLight, ButtonDark, true, false)}
+        onClick={() => handleVarios(bgLight, ButtonDark, true, false,"hidden")}
       >
         <img
           src={AnimalWhite}
@@ -62,21 +74,21 @@ export const Headers = () => {
           <Link
             style={color}
             to="/the-paper"
-            onClick={() => handleVarios(VisionBG, ButtonLigt, false)}
+            onClick={() => handleVarios(PaperBG, ButtonLigt, false,"Limbo","hidden")}
           >
             The Process
           </Link>
           <Link
             style={color}
             to="/team"
-            onClick={() => handleVarios(VisionBG, ButtonLigt, false)}
+            onClick={() => handleVarios(VisionBG, ButtonLigt, false,"main","hidden")}
           >
             Team
           </Link>
           <Link
             style={color}
             to="/vision-map"
-            onClick={() => handleVarios(VisionBG, ButtonLigt, false)}
+            onClick={() => handleVarios(VisionBG, ButtonLigt, false,"main","hidden")}
           >
             Vision Map
           </Link>

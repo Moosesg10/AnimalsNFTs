@@ -7,9 +7,9 @@ const H1 = styled.h1`
   color: rgb(6, 6, 6);
   font-family: "Bebas Neue", "sans-serif";
   width: 100%;
-  padding: 1rem;
-
+  padding: 0;
   font-style: italic;
+  text-align:center;
 `;
 
 export const Comingsoon = () => {
@@ -33,8 +33,7 @@ export const Comingsoon = () => {
   }, [width]);
   return (
     <>
-     {width <= 820 &&  <div style={{ padding: "4rem" }}></div>}
-     {width <= 400 &&  <div style={{ padding: "2rem" }}></div>}
+    
       <div
         style={{
           display: "flex",
@@ -42,7 +41,7 @@ export const Comingsoon = () => {
           alignItems: "center",
           width: "100%",
           height: "100%",
-          marginLeft: "4rem",
+          padding:"0"
         }}
       >
         <H1 size={sizeh1}>Coming Soon</H1>

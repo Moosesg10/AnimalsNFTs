@@ -4,59 +4,54 @@ import Infos from "../components/VisionMap/info/Info";
 import ImgResponsive from "../components/VisionMap/VisionMapResponsive/ImgResponsive";
 import ContentResposive from "../components/VisionMap/VisionMapResponsive/ContentResponsive";
 import styled from "@emotion/styled";
-import InnerWidth from "../components/InnerWidth";
 import VisionDesktops from "../components/VisionMap/VisonDesktops";
 
 const Divs= styled.div`
-    display: flex;
-  justify-content: flex-start;
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  padding-top: 4em ;
 `
 
 const VisionMap = () => {
   const Context = useContext(ThemeContext)
   const Aniamation= Context.animation
-  const [responsive, setResponsive] = useState(false)
-  const widt = InnerWidth()
+  const Widht = Context.width
   const Overflow = Context.setOverflow
 
  useEffect(() => {
-  if(widt <=800){
-    setResponsive(true)
+  if(Widht <= 1000){
     Overflow("scroll")
   }else{
-    setResponsive(false)
     Overflow("hidden")
-
   }
- }, [widt])
+ }, [Widht])
 
-const VisionMapDestktop = useMemo(() => {
+console.log(Widht)
+
+const VisionMapDestktop = () => {
  return(
-      <Divs>
+ 
           <VisionDesktops/>
-      </Divs>
+    
  )
-},[])
-
-const VisionMapResponsive = useMemo(() => {
+}
+const VisionMapResponsive = () => {
   return ( <Divs >
     {ContentResposive &&   ContentResposive.map((vision) => (
      <ImgResponsive key={vision.id} vision={vision} animacion={Aniamation} />
    ))}
    </Divs>)
-}, [])
-
+}
   return(
    <>
-    {!responsive ? VisionMapDestktop : VisionMapResponsive}
+    {Widht >= 1000 ? VisionMapDestktop() : VisionMapResponsive()}
   <Infos/>
    </>
-    
     )
 };
 
-export default memo(VisionMap);
+export default VisionMap;

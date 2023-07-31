@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import InnerWidth from "../components/InnerWidth";
+import ThemeContext from "../context/ThemeContext";
 
 const H1 = styled.h1`
   font-weight: bold;
@@ -18,31 +19,31 @@ const H1 = styled.h1`
 
 export const Animals = () => {
   const [sizeh1, setSizeh1] = useState(18)
-  const width = InnerWidth();
 
+const Width = useContext(ThemeContext).width
 
   useEffect(() => {
-    if(width >=901 )setSizeh1(18)
-    if(width <=900 )setSizeh1(12)
-    if(width <=800 )setSizeh1(10)
-    if(width <=700 )setSizeh1(9)
-    if(width <=600 )setSizeh1(8)
-    if(width <=500 )setSizeh1(7)
-    if(width <=400 )setSizeh1(5)
-  }, [width]);
+    if(Width >=901 )setSizeh1(18)
+    if(Width <=900 )setSizeh1(12)
+    if(Width <=800 )setSizeh1(10)
+    if(Width <=700 )setSizeh1(9)
+    if(Width <=600 )setSizeh1(8)
+    if(Width <=500 )setSizeh1(7)
+    if(Width <=400 )setSizeh1(5)
+  }, [Width]);
 
 
 
   return (
     <div
       style={{
-        width: "100vw",
-        height: "100vh",
+        width: "100%",
+        height: "100%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: "-5rem ",
+        
       }}
     >
       <H1 size={sizeh1}>Animals</H1>
