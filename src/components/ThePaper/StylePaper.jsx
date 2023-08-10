@@ -1,22 +1,23 @@
 import { styled } from "styled-components";
 
 const DIVS = styled.div`
-  min-height: 10%;
-  height: 80%;
-  min-width: 80%;
-  width: 80%;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-
-`;
-
-
-export const Div = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  height: 10%;
+  min-height: 750px ;
+  min-width:250px ;
+  width: 100%;
+`;
+
+export const Div = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   width: 100%;
   height: 20%; 
+  padding: 0;
   animation-name: move;
   animation-duration: 0.8s;
   animation-delay: 0s;

@@ -1,7 +1,7 @@
-import Limbo from "../../assets/Img/Lore/Limbo.jpg";
-import Theclan from "../../assets/Img/Lore/Theclan.jpg";
-import Ascencion from "../../assets/Img/Lore/Ascencion.jpg";
-import Iluminacion from "../../assets/Img/Lore/Iluminacion.jpg";
+import Limbo from "../../assets/Img/Lore/Limbo.webp";
+import Theclan from "../../assets/Img/Lore/Theclan.webp";
+import Ascencion from "../../assets/Img/Lore/Ascencion.webp";
+import Iluminacion from "../../assets/Img/Lore/Iluminacion.webp";
 
 const Content = [
   {

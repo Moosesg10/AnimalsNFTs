@@ -13,7 +13,6 @@ const Divs= styled.div`
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding-top: 4em ;
 `
 
 const VisionMap = () => {
@@ -30,13 +29,9 @@ const VisionMap = () => {
   }
  }, [Widht])
 
-console.log(Widht)
-
 const VisionMapDestktop = () => {
  return(
- 
           <VisionDesktops/>
-    
  )
 }
 const VisionMapResponsive = () => {

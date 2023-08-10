@@ -2,12 +2,12 @@ import { styled } from "styled-components"
 
 
  const SocialLinks ={
-    position: "fixed",
+    position: "absolute",
     zIndex: "999",
-    bottom: "-4vh",
+    bottom: "5vh",
     right: "2vw",
     width: "150px",
-    height: "150px",
+    height: "0",
     padding: "0",
     margin: "0",
     display: "flex",

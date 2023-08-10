@@ -18,7 +18,8 @@ const Div = styled.div`
   flex-shrink: 1;
   flex-grow: 1;
   width: 100%;
-  height: 100%;
+  height: 20%;
+  padding: 0;
   @keyframes up {
     0% {
       transform: translateY(950px);

@@ -6,9 +6,6 @@ import Typography from '@mui/material/Typography';
 
 
 
-
-
-
 const Cards=styled(Card)`
   background-color: #f4e9e9;
   transition: background , filter , transform  0.3s ease-in;

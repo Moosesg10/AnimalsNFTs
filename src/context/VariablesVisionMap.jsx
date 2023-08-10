@@ -1,9 +1,9 @@
-import Muladhara from "../assets/Img/Personajevision/chakara-rojo.png";
-import Svadhisthana from "../assets/Img/Personajevision/chakara-naranja.png";
-import Manipura from "../assets/Img/Personajevision/chakara-amarrilo.png";
-import Anahata from "../assets/Img/Personajevision/chakara-verde.png";
-import Vishuddha from "../assets/Img/Personajevision/chakara-celeste.png";
-import Ajna from "../assets/Img/Personajevision/chakara-azul-1.png";
+import Muladhara from "../assets/Img/Personajevision/chakara-rojo.webp";
+import Svadhisthana from "../assets/Img/Personajevision/chakara-naranja.webp";
+import Manipura from "../assets/Img/Personajevision/chakara-amarrilo.webp";
+import Anahata from "../assets/Img/Personajevision/chakara-verde.webp";
+import Vishuddha from "../assets/Img/Personajevision/chakara-celeste.webp";
+import Ajna from "../assets/Img/Personajevision/chakara-azul-1.webp";
 import {
   ButtonDark,
   ButtonLigt,

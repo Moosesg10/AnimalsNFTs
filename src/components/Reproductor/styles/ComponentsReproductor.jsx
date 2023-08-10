@@ -31,7 +31,6 @@ export const Contendor = styled.div`
   position: relative;
   left: 1rem;
   width: auto;
-  height: 300px;
   background-color: #222;
   border-radius: 50%;
   height: auto;
@@ -87,6 +86,25 @@ export const DivContentPanel = styled.div`
 export const DivBoton = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+`;
+
+export const DivPanelResponsive = styled.div`
+  display: ${({display}) => display };
+  justify-content: center;
+  gap: 2em;
+  align-items: center;
+  width: 100px;
+  background-color: #222;
+  height: auto;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  height: 40px;
+`;
+export const DivBotonResposinve = styled.div`
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
 `;

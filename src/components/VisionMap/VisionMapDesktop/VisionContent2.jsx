@@ -1,9 +1,9 @@
-import Muladhara from "../../../assets/Img/Personajevision/chakara-rojo.png";
-import Svadhisthana from "../../../assets/Img/Personajevision/chakara-naranja.png";
-import Manipura from "../../../assets/Img/Personajevision/chakara-amarrilo.png";
-import Anahata from "../../../assets/Img/Personajevision/chakara-verde.png";
-import Vishuddha from "../../../assets/Img/Personajevision/chakara-celeste.png";
-import Ajna from "../../../assets/Img/Personajevision/chakara-azul-1.png";
+import Muladhara from "../../../assets/Img/Personajevision/chakara-rojo.webp";
+import Svadhisthana from "../../../assets/Img/Personajevision/chakara-naranja.webp";
+import Manipura from "../../../assets/Img/Personajevision/chakara-amarrilo.webp";
+import Anahata from "../../../assets/Img/Personajevision/chakara-verde.webp";
+import Vishuddha from "../../../assets/Img/Personajevision/chakara-celeste.webp";
+import Ajna from "../../../assets/Img/Personajevision/chakara-azul-1.webp";
 import Sahasrara from "../../../assets/vaca-sagrada.gif";
 import MuladharaDetails from "../../../assets/Img/personajeDetalles/chakara-rojo.png";
 import SvadhisthanaDetails from "../../../assets/Img/personajeDetalles/chakara-naranja.png";
@@ -29,7 +29,6 @@ const VisionContent2 = [
     top: "13%",
     left: "76%",
     heigthP: "200px",
-    heigthBg: "32%",
     dropShadow: "#be2b42",
     dropShadowinitial: "#d8eded",
     url:"/vision-map/Muladhara",
@@ -44,8 +43,7 @@ const VisionContent2 = [
     id: 1,
     top: "-1%",
     left: "43%",
-    heigthP: "200px",
-    heigthBg: "32%",
+    heigthP: "180px",
     dropShadow: "#3380e6",
     dropShadowinitial: "#d8eded",
     url:"/vision-map/Ajna",
@@ -58,7 +56,7 @@ const VisionContent2 = [
     id: 7,
     top: "20%",
     left: "37%",
-    heigthP: "420px",
+    heigthP: "300px",
     dropShadow: "#c72f69",
     dropShadowinitial: "#d8eded",
     url:"/vision-map",
@@ -74,7 +72,6 @@ const VisionContent2 = [
     id: 3,
     top: "50%",
     left: "75%",
-    heigthBg: "32%",
     heigthP: "200px",
     dropShadow: "#c66132",
     dropShadowinitial: "#d8eded",
@@ -106,7 +103,6 @@ const VisionContent2 = [
     top: "50%",
     left: "7%",
     heigthP: "200px",
-    heigthBg: "32%",
     dropShadow: "#1bce7a",
     dropShadowinitial: "#d8eded",
     url:"/vision-map/Anahata",
@@ -122,7 +118,6 @@ const VisionContent2 = [
     top: "13%",
     left: "7%",
     heigthP: "200px",
-    heigthBg: "32%",
     dropShadow: "#00eaf8",
     dropShadowinitial: "#d8eded",
     url:"/vision-map/Vishuddha",

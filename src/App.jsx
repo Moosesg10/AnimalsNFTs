@@ -24,22 +24,16 @@ function App() {
   const { backgroundColor, color, transition, backgroundImage ,backgroundColors } = bg;
   const ColorBGmainS = theme.colorBGmain;
   
-
-
   return (
     <div className="DivMain">
       <BrowserRouter>
-
         <Routes>
           <Route
             path="/"
             element={
-    
                 <Comingsoon />
-  
             }
           />
-
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

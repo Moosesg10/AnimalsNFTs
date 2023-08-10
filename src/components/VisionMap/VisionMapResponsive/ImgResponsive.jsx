@@ -5,7 +5,8 @@ import ThemeContext from "../../../context/ThemeContext";
 
 const ImgPersonaje = styled.img`
   z-index: 995;
-  height: ${({ heigthp }) => heigthp};
+  height: 50px;
+
   transition: filter, transform 0.3s ease-in-out;
   animation-name: ${({ name }) => name};
   animation-duration: 2s;
@@ -57,7 +58,7 @@ const ImgResponsive = ({ vision, animacion }) => {
   }
 
   return (
-    <div>
+    <>
       <Link
         to={url}
         onClick={handleVaries}
@@ -71,7 +72,7 @@ const ImgResponsive = ({ vision, animacion }) => {
           name={animacion}
         />
       </Link>
-    </div>
+    </>
   );
 };
 

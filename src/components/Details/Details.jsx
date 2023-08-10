@@ -7,13 +7,10 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 
 const ImgPersonaje = styled.img`
-  left: ${({ left }) => left};
   height: 100%;
   max-height:100% ;
   filter: drop-shadow(0 0 1em ${({ dropshadow }) => dropshadow});
   transform: ${({ transform }) => transform};
-  right: ${({ right }) => right};
-
 `;
 
 const ImgPapiro = styled.img`
@@ -21,8 +18,6 @@ const ImgPapiro = styled.img`
   height: 41%;
   max-width: 30%;
   max-height: 44%;
-  top: 35%;
-  left: 35.5%;
   z-index: 997;
   animation-name: move;
   animation-duration: 0.8s;
@@ -94,7 +89,7 @@ useEffect(() => {
 
 
 return (
-    !mostarResponsive ? <div style={{width:"100%", height:"100%", maxWidth:"100%", display:"flex", justifyContent:"center", alignItems:"center", gap:"3.2em"}}>
+    !mostarResponsive ? <div style={{width:"100%", maxWidth:"1280px",height:"100%", maxWidth:"100%", display:"flex", justifyContent:"center", alignItems:"center"}}>
     <ImgPersonaje
       src={imgDetails}
       alt={name}

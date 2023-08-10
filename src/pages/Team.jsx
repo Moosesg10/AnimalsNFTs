@@ -20,6 +20,7 @@ const  Divs = styled.div`
   width: 100%;
   height: 100%;
   min-width: 250px;
+  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,9 +75,8 @@ const Team = () => {
   }, [Width])
 
   useEffect(() => {
-    setDatos(team.Team);
-   
-  }, []);
+     setDatos(team.Team)
+  }, [datos]);
 
   const Buba = team.Founder.map((data) => data)[0];
 

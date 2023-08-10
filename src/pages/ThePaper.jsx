@@ -8,12 +8,13 @@ import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 
 
+
 const ThePaper = () => {
   const [contentNumber, setContentNumber] = useState(0)
   const [contents, setContents] = useState(Content[contentNumber]);
-
   const context = useContext(ThemeContext)
   const handleImg = context.handelImg
+  const Width = context.width
 
  useEffect(() => {
   setContents(Content[contentNumber])
@@ -30,20 +31,25 @@ const ThePaper = () => {
     } else {
       setContentNumber(0)
 
-    }
+    }  
   };
 
+  const [scrolls, setScrolls] = useState("hidden")
 
+
+
+  useEffect(() => {
+      if(Width <= 600 ) setScrolls("scroll")
+  }, [Width])
 
   return (
     <div
       style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection:"column",
         height: "100%",
         width:"100%",
+        overflowY: scrolls,
+        maxWidth: "100%",
+        maxHeight: "100%",
       }}
     >
       <DIVS>
@@ -51,8 +57,7 @@ const ThePaper = () => {
               key={contents.id}
               data={contents}
             />
-      </DIVS>
-      <Div>
+             <Div>
         {contentNumber <= 2.5 ? (
           <button
             style={{
@@ -87,7 +92,6 @@ const ThePaper = () => {
               justifyContent: "center",
               alignItems: "center",
               textAlign:"center",
-             
 
             }}
             onClick={() => handleTraslate("up")}
@@ -96,6 +100,7 @@ const ThePaper = () => {
           </button>
         )}
       </Div>
+      </DIVS>
     </div>
   );
 };
