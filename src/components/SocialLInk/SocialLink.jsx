@@ -1,8 +1,8 @@
 import React from "react";
 import { Links, Logo, SocialLinks, Ul } from "./Styles";
-import magiceden from '../../assets/magiceden.svg'
+
 import twitter from '../../assets/twitter.svg'
-import discord from '../../assets/discord.svg'
+import discord from '../../assets/discordDark.svg'
 import { useContext } from "react";
 import ThemeContext from "../../context/ThemeContext";
 import { useEffect } from "react";

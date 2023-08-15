@@ -30,7 +30,7 @@ import { styled } from "styled-components"
     align-items: center;
     width: 60px;
     height: 60px;
-    background-color:rgb(6, 6, 6);
+    background-color:rgb(255, 255, 255);
     border-radius: 50%;
     font-size: 0.8em;  
     cursor:pointer;
@@ -41,8 +41,8 @@ import { styled } from "styled-components"
 `
 
  const Logo ={
-    width: "40px",
-    height: "40px",
+    width: "50px",
+    height: "50px",
     color:"#fff"
 }
 
