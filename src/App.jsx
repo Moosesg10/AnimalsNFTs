@@ -1,10 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import { useContext } from "react";
 import ThemeContext from "./context/ThemeContext";
 import { GlobalStyled } from "./GlobalStyled";
 import { Error404 } from "./pages/Error404";
-
 import { Comingsoon } from "./pages/ComingSoon";
 
 
@@ -27,7 +25,6 @@ function App() {
                 <Comingsoon />
             }
           />
- 
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
