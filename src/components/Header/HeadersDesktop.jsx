@@ -26,13 +26,9 @@ export const Headers = () => {
   const handleAnimacion = theme.setAnimation;
   const handelImg = theme.handelImg
 
-
   const Context = useContext(ThemeContext)
   const Overflow = Context.setOverflow
  
- 
-
-
 
   const handleVarios = (bg, button, bolean,conditional ,overflow) => {
     theme.handleTheme(bg, button, bolean);
